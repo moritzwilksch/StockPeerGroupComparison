@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Peer Group Valuation</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+    <style>
+        table.is-narrow{background-color: white;}
+        table.is-hoverable tbody tr:not(.is-selected):hover {background-color: rgb(122, 209, 196) !important;}
+    </style>
+
+</head>
+
+<body>
+    <div class='container'>
+
+        <h3 class="title is-1 mt-4">Peer Group Comparison</h3>
+
+        <div class="colums">
+            <div class="is-half">
+
+                <div class="card mb-4">
+                    <div class="card-content is-centered">
+                        <form class="" action='/load_data' , method="POST" , id='ticker_form'>
+                            <div class="field">
+                                <label class="label">Tickers (comma separated)</label>
+                                <div class="control">
+                                    <input name="textarea_tickers" , class="input is-primary" type="text"
+                                        placeholder="Tickers..." value="{{tickers}}">
+                                </div>
+                            </div>
+                            <button type='submit' class="button is-primary">Load Data</button>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="column is-half">
+            <div class="table-container mb-4 is-centered">{{table_to_show|safe}}</div>
+        </div>
+
+
+
+
+    </div>
+
+
+</body>
+
+</html>
